@@ -9,8 +9,18 @@ router.get('/',(req,res,next) =>{
 
 
 router.post('/',(req,res,next) =>{
-    res.status(200).json({
-        message: 'Handling POST request /rooms'
+    const room = {
+        id: req.body.id,
+        price: req.body.price,
+        level: req.body.price,
+        status: req.body.status,
+        customerName: req.body.customerName,
+        startDate : req.body.startDate,
+        endDate: req.body.endDate
+    };
+    res.status(201).json({
+        message: 'Room created successfully',
+        createdRoom: room
     });
 });
 

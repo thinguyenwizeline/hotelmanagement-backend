@@ -9,8 +9,19 @@ router.get('/',(req,res,next) =>{
 
 
 router.post('/',(req,res,next) =>{
+    const customer = {
+        name: req.body.name,
+        dateOfBirth: req.body.dateOfBirth,
+        totalLiveDays: req.body.totalLiveDays,
+        idNumber: req.body.idNumber,
+        customerID: req.body.customerID,
+        note : req.body.note,
+        telephone: req.body.telephone,
+        address: req.body.address
+    };
     res.status(200).json({
-        message: 'Handling POST request /rooms'
+        message: 'Customer created successfully',
+        createdCustomer : customer
     });
 });
 
